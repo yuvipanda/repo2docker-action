@@ -13,12 +13,12 @@ function check_env() {
     fi
 }
 
-if [ -z "$INPUT_NO_PUSH" ]; then
-    check_env "INPUT_DOCKER_USERNAME"
-    check_env "INPUT_DOCKER_PASSWORD"
-    # Login to Docker registry
-    echo ${INPUT_DOCKER_PASSWORD} | docker login $INPUT_DOCKER_REGISTRY -u ${INPUT_DOCKER_USERNAME} --password-stdin
-fi
+# if [ -z "$INPUT_NO_PUSH" ]; then
+#     check_env "INPUT_DOCKER_USERNAME"
+#     check_env "INPUT_DOCKER_PASSWORD"
+#     # Login to Docker registry
+#     echo ${INPUT_DOCKER_PASSWORD} | docker login $INPUT_DOCKER_REGISTRY -u ${INPUT_DOCKER_USERNAME} --password-stdin
+# fi
 
 REPO_NAME=`echo $GITHUB_REPOSITORY | cut -d "/" -f 2`
 
